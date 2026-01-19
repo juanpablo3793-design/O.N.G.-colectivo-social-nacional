@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Censo Territorial</title>
     <style>
-        /* ===== ESTILOS GENERALES ===== */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
@@ -31,8 +30,6 @@
             border-radius: 12px;
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
         }
-        
-        /* ===== SISTEMA DE PESTAÑAS ===== */
         .tabs {
             display: flex;
             background: #f8f9fa;
@@ -66,8 +63,6 @@
         .tab-content.active {
             display: block;
         }
-        
-        /* ===== BARRA DE PROGRESO ===== */
         .progress-container {
             display: flex;
             justify-content: space-between;
@@ -114,8 +109,6 @@
             font-size: 12px;
             color: #666;
         }
-        
-        /* ===== MÓDULOS DEL FORMULARIO ===== */
         .module {
             display: none;
             padding-bottom: 10px;
@@ -132,8 +125,6 @@
             margin-bottom: 25px;
             font-size: 1.4em;
         }
-        
-        /* ===== ESTILOS DE FORMULARIO ===== */
         label {
             display: block;
             margin-top: 18px;
@@ -161,7 +152,6 @@
             outline: none;
             box-shadow: 0 0 0 3px rgba(0, 82, 177, 0.15);
         }
-        
         #edad {
             -moz-appearance: textfield;
         }
@@ -170,13 +160,10 @@
             -webkit-appearance: none;
             margin: 0;
         }
-        
         .required {
             color: #e74c3c;
             font-weight: bold;
         }
-        
-        /* ===== BOTONES ===== */
         button {
             padding: 14px 28px;
             background: linear-gradient(135deg, #0052B1 0%, #0066CC 100%);
@@ -196,8 +183,6 @@
         button.secondary {
             background: linear-gradient(135deg, #6c757d 0%, #868e96 100%);
         }
-        
-        /* ===== CAMPOS CONDICIONALES ===== */
         .conditional-field {
             display: none;
             margin-top: 20px;
@@ -207,8 +192,6 @@
             border-left: 4px solid #0052B1;
             animation: slideIn 0.3s ease;
         }
-        
-        /* ===== MAPA INTERACTIVO ===== */
         #mapa-css {
             width: 100%;
             height: 500px;
@@ -241,8 +224,6 @@
             transform: scale(1.05);
             z-index: 10;
         }
-        
-        /* ===== TOOLTIP DEL MAPA ===== */
         .map-tooltip {
             position: absolute;
             background: rgba(0, 0, 0, 0.85);
@@ -257,8 +238,6 @@
             display: none;
             backdrop-filter: blur(4px);
         }
-        
-        /* ===== TARJETAS DE ESTADÍSTICAS ===== */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -283,8 +262,6 @@
             font-weight: bold;
             color: #333;
         }
-        
-        /* ===== TABLA DE ADMINISTRACIÓN ===== */
         .data-table {
             width: 100%;
             border-collapse: collapse;
@@ -308,8 +285,6 @@
         .data-table tr:hover {
             background-color: #f8f9fa;
         }
-        
-        /* ===== MENSAJE DE ÉXITO ===== */
         .success-message {
             background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
             color: #155724;
@@ -331,8 +306,6 @@
             display: inline-block;
             font-family: monospace;
         }
-        
-        /* ===== BOTONES ESPECIALES ===== */
         .btn-export {
             background: linear-gradient(135deg, #28a745 0%, #20c997 100%) !important;
             margin: 10px 5px;
@@ -351,8 +324,6 @@
             font-size: 12px !important;
             margin-right: 5px;
         }
-        
-        /* ===== BOTÓN DE LOGIN ===== */
         .login-btn {
             position: fixed;
             top: 20px;
@@ -371,8 +342,6 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 15px rgba(40, 167, 69, 0.4);
         }
-        
-        /* ===== MODAL DE LOGIN ===== */
         .modal {
             display: none;
             position: fixed;
@@ -406,42 +375,16 @@
             gap: 10px;
             margin-top: 20px;
         }
-        
-        /* ===== RESPONSIVE PARA MÓVILES ===== */
         @media (max-width: 768px) {
-            body {
-                padding: 10px;
-            }
-            header {
-                padding: 15px;
-                margin: 10px auto;
-            }
-            .container {
-                padding: 15px;
-            }
-            .tabs {
-                flex-direction: column;
-            }
-            .tab {
-                padding: 12px;
-                border-right: none;
-                border-bottom: 1px solid #dee2e6;
-            }
-            .login-btn {
-                position: static;
-                margin: 10px auto;
-                display: block;
-                width: 90%;
-            }
-            #mapa-css {
-                height: 350px;
-            }
-            .comuna-css {
-                font-size: 9px !important;
-            }
+            body { padding: 10px; }
+            header { padding: 15px; margin: 10px auto; }
+            .container { padding: 15px; }
+            .tabs { flex-direction: column; }
+            .tab { padding: 12px; border-right: none; border-bottom: 1px solid #dee2e6; }
+            .login-btn { position: static; margin: 10px auto; display: block; width: 90%; }
+            #mapa-css { height: 350px; }
+            .comuna-css { font-size: 9px !important; }
         }
-        
-        /* ANIMACIONES */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
@@ -451,22 +394,14 @@
             to { opacity: 1; transform: translateX(0); }
         }
         @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
-    <!-- BOTÓN DE LOGIN (esquina superior derecha) -->
     <button class="login-btn" onclick="mostrarLogin()">🔓 Acceso Admin</button>
     
-    <!-- MODAL DE LOGIN -->
     <div id="loginModal" class="modal">
         <div class="modal-content">
             <h3>🔐 Acceso de Administrador</h3>
@@ -493,16 +428,13 @@
     </header>
 
     <div class="container">
-        <!-- SISTEMA DE PESTAÑAS -->
         <div class="tabs">
             <button class="tab active" onclick="switchTab('censo')">📋 Nuevo Censo</button>
             <button class="tab" onclick="verificarAccesoTab('mapa')">🗺️ Mapa Interactivo</button>
             <button class="tab" onclick="verificarAccesoTab('admin')">📊 Administración</button>
         </div>
 
-        <!-- PESTAÑA 1: FORMULARIO DE CENSO -->
         <div id="censo-tab" class="tab-content active">
-            <!-- BARRA DE PROGRESO -->
             <div class="progress-container">
                 <div class="progress-bar" id="progressBar"></div>
                 <div class="progress-step active" data-step="1">1<div class="progress-label">Datos Personales</div></div>
@@ -512,7 +444,6 @@
                 <div class="progress-step" data-step="5">5<div class="progress-label">Legal</div></div>
             </div>
 
-            <!-- MÓDULO 1: DATOS PERSONALES -->
             <div class="module active" id="m1">
                 <h2 class="module-title">Módulo 1 – Datos Personales</h2>
                 
@@ -533,12 +464,11 @@
                 <label>Género <span class="required">*</span></label>
                 <select id="genero">
                     <option value="">Seleccione</option>
-                    <option value="masculino">Masculino</option>
-                    <option value="femenino">Femenino</option>
-                    <option value="otro">Otro</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                    <option value="Otro">Otro</option>
                 </select>
                 
-                <!-- CAMPO CONDICIONAL: MADRE CABEZA DE HOGAR -->
                 <div class="conditional-field" id="madreCabezaField">
                     <label>¿Es madre cabeza de hogar? <span class="required">*</span></label>
                     <select id="madreCabeza">
@@ -553,7 +483,6 @@
                 </div>
             </div>
 
-            <!-- MÓDULO 2: CONTACTO -->
             <div class="module" id="m2">
                 <h2 class="module-title">Módulo 2 – Contacto</h2>
                 
@@ -570,7 +499,6 @@
                     <option value="no">No</option>
                 </select>
                 
-                <!-- CAMPO CONDICIONAL: TIPO DE VIVIENDA SI NO ES PROPIA -->
                 <div class="conditional-field" id="tipoViviendaField">
                     <label>Si no es propia, especifique <span class="required">*</span></label>
                     <select id="tipoVivienda">
@@ -589,7 +517,6 @@
                 </div>
             </div>
 
-            <!-- MÓDULO 3: ACTIVIDAD -->
             <div class="module" id="m3">
                 <h2 class="module-title">Módulo 3 – Actividad</h2>
                 
@@ -603,7 +530,6 @@
                     <option value="pensionado">Pensionado</option>
                 </select>
                 
-                <!-- CAMPO CONDICIONAL: SUBCATEGORÍA DE TRABAJO INFORMAL -->
                 <div class="conditional-field" id="subcategoriaTrabajoField">
                     <label>Subcategoría de trabajo informal <span class="required">*</span></label>
                     <select id="subcategoriaTrabajo">
@@ -625,7 +551,6 @@
                 </div>
             </div>
 
-            <!-- MÓDULO 4: UBICACIÓN -->
             <div class="module" id="m4">
                 <h2 class="module-title">Módulo 4 – Ubicación</h2>
                 
@@ -645,7 +570,6 @@
                 </div>
             </div>
 
-            <!-- MÓDULO 5: LEGAL -->
             <div class="module" id="m5">
                 <h2 class="module-title">Módulo 5 – Legal</h2>
                 
@@ -659,7 +583,7 @@
                 </select>
                 
                 <label>Relación con institución</label>
-                    <select id="relacionInstitucion">
+                <select id="relacionInstitucion">
                     <option value="">Seleccione</option>
                     <option value="ninguna">Ninguna</option>
                     <option value="policia">Policía</option>
@@ -679,7 +603,6 @@
                 </div>
             </div>
             
-            <!-- MENSAJE DE ÉXITO -->
             <div class="success-message" id="successMessage">
                 <h3>¡Registro completado exitosamente!</h3>
                 <p>Su código de censo es:</p>
@@ -688,17 +611,13 @@
             </div>
         </div>
 
-        <!-- PESTAÑA 2: MAPA INTERACTIVO -->
         <div id="mapa-tab" class="tab-content">
             <h2 class="module-title">🗺️ Mapa Interactivo Territorial</h2>
             
-            <!-- CONTENEDOR DEL MAPA -->
             <div id="mapa-css"></div>
             
-            <!-- TOOLTIP DEL MAPA -->
             <div class="map-tooltip" id="mapTooltip"></div>
             
-            <!-- ESTADÍSTICAS DEL MAPA -->
             <div class="stats-grid">
                 <div class="stat-card">
                     <h3>Comuna Seleccionada</h3>
@@ -718,7 +637,6 @@
                 </div>
             </div>
             
-            <!-- BOTONES DE ACCIÓN -->
             <div style="margin-top:20px; display:flex; gap:10px; flex-wrap:wrap;">
                 <button onclick="generarReporteComuna()" style="padding:12px 24px; background:linear-gradient(135deg, #28a745 0%, #20c997 100%); color:white; border:none; border-radius:8px; cursor:pointer; font-weight:600; flex:1; min-width:200px;">
                     📋 Generar Reporte de Comuna
@@ -729,11 +647,9 @@
             </div>
         </div>
 
-        <!-- PESTAÑA 3: ADMINISTRACIÓN -->
         <div id="admin-tab" class="tab-content">
             <h2 class="module-title">📊 Panel de Administración</h2>
             
-            <!-- ESTADÍSTICAS PRINCIPALES -->
             <div class="stats-grid">
                 <div class="stat-card">
                     <h3>Total Registros</h3>
@@ -753,7 +669,6 @@
                 </div>
             </div>
             
-            <!-- BOTONES DE EXPORTACIÓN -->
             <div style="margin:20px 0; display:flex; gap:10px; flex-wrap:wrap;">
                 <button onclick="exportarAExcel()" class="btn-export" style="flex:1; min-width:200px;">
                     📊 Exportar a Excel (Todos los registros)
@@ -763,13 +678,11 @@
                 </button>
             </div>
             
-            <!-- BARRA DE BÚSQUEDA -->
             <div style="margin:20px 0;">
                 <input type="text" id="searchInput" placeholder="🔍 Buscar por cédula, nombre o código..." 
                        style="width:100%; padding:15px; border:2px solid #dee2e6; border-radius:8px; font-size:16px;">
             </div>
             
-            <!-- TABLA DE REGISTROS -->
             <div style="overflow-x:auto;">
                 <table class="data-table">
                     <thead>
@@ -784,12 +697,10 @@
                         </tr>
                     </thead>
                     <tbody id="registrosBody">
-                        <!-- Los registros se cargan dinámicamente -->
                     </tbody>
                 </table>
             </div>
             
-            <!-- CONTADOR DE REGISTROS -->
             <div style="text-align:center; margin:20px 0; color:#666;">
                 <p id="contadorRegistros">Mostrando 0 registros</p>
             </div>
@@ -801,157 +712,25 @@
         // CONFIGURACIÓN DEL SISTEMA
         // ============================================
         
+        // ⚠️ ESTA ES TU URL DEL ROBOT - VERIFICA QUE ESTÉ CORRECTA ⚠️
+        const URL_ROBOT = "https://script.google.com/macros/s/AKfycbwIuiuNl_v4JfdyxhACSO-gD5Xds5UzzG9M_qFK84QAo9XpXR5gaj4hNTmxnf2WAHY-/exec";
+        
         // ===== USUARIOS AUTORIZADOS =====
-        // MODIFICA AQUÍ: Agrega, quita o cambia usuarios
-        // Formato: { usuario: "nombre", clave: "contraseña" }
         const USUARIOS_AUTORIZADOS = [
             { usuario: "admin", clave: "admin123" },
-            { usuario: "director", clave: "director456" },
-            { usuario: "colectivo", clave: "ong2024" },
-            { usuario: "consultor", clave: "consulta789" }
-            // AGREGA MÁS USUARIOS AQUÍ...
-            // { usuario: "nuevo", clave: "nuevacontra" },
+            { usuario: "director", clave: "ong2024" }
         ];
         
         // Control de sesión
         let usuarioLogueado = null;
-        const SESION_DURACION = 8 * 60 * 60 * 1000; // 8 horas
+        const SESION_DURACION = 8 * 60 * 60 * 1000;
         
-        // ===== FUNCIONES DE LOGIN =====
-        function mostrarLogin() {
-            document.getElementById('loginModal').style.display = 'flex';
-            document.getElementById('inputUsuario').focus();
-        }
-        
-        function cerrarLogin() {
-            document.getElementById('loginModal').style.display = 'none';
-            document.getElementById('loginError').style.display = 'none';
-            document.getElementById('inputUsuario').value = '';
-            document.getElementById('inputClave').value = '';
-        }
-        
-        function intentarLogin() {
-            const usuario = document.getElementById('inputUsuario').value.trim();
-            const clave = document.getElementById('inputClave').value.trim();
-            const errorDiv = document.getElementById('loginError');
-            
-            // Verificar credenciales
-            const usuarioValido = USUARIOS_AUTORIZADOS.find(u => 
-                u.usuario === usuario && u.clave === clave
-            );
-            
-            if (usuarioValido) {
-                // Login exitoso
-                usuarioLogueado = usuario;
-                localStorage.setItem('censoUsuario', usuario);
-                localStorage.setItem('censoLoginTime', Date.now());
-                
-                cerrarLogin();
-                actualizarInterfazLogin();
-                alert('✅ Acceso concedido como: ' + usuario);
-            } else {
-                // Login fallido
-                errorDiv.style.display = 'block';
-                document.getElementById('inputClave').value = '';
-                document.getElementById('inputClave').focus();
-            }
-        }
-        
-        function verificarSesion() {
-            const usuarioGuardado = localStorage.getItem('censoUsuario');
-            const loginTime = localStorage.getItem('censoLoginTime');
-            
-            if (usuarioGuardado && loginTime) {
-                const tiempoTranscurrido = Date.now() - parseInt(loginTime);
-                
-                if (tiempoTranscurrido < SESION_DURACION) {
-                    usuarioLogueado = usuarioGuardado;
-                    actualizarInterfazLogin();
-                } else {
-                    // Sesión expirada
-                    localStorage.removeItem('censoUsuario');
-                    localStorage.removeItem('censoLoginTime');
-                    usuarioLogueado = null;
-                }
-            }
-        }
-        
-        function cerrarSesion() {
-            if (confirm('¿Cerrar sesión de administrador?')) {
-                usuarioLogueado = null;
-                localStorage.removeItem('censoUsuario');
-                localStorage.removeItem('censoLoginTime');
-                actualizarInterfazLogin();
-                switchTab('censo');
-                alert('Sesión cerrada.');
-            }
-        }
-        
-        function actualizarInterfazLogin() {
-            const loginBtn = document.querySelector('.login-btn');
-            
-            if (usuarioLogueado) {
-                loginBtn.innerHTML = `👤 ${usuarioLogueado} (Cerrar sesión)`;
-                loginBtn.onclick = cerrarSesion;
-                loginBtn.style.background = 'linear-gradient(135deg, #0052B1 0%, #0066CC 100%)';
-                
-                // Activar todas las pestañas
-                document.querySelectorAll('.tab').forEach(tab => {
-                    tab.style.display = 'flex';
-                });
-            } else {
-                loginBtn.innerHTML = '🔓 Acceso Admin';
-                loginBtn.onclick = mostrarLogin;
-                loginBtn.style.background = 'linear-gradient(135deg, #28a745 0%, #20c997 100%)';
-                
-                // Desactivar pestañas protegidas
-                document.querySelectorAll('.tab').forEach((tab, index) => {
-                    if (index > 0) { // Todas excepto "Nuevo Censo"
-                        tab.style.display = 'none';
-                    }
-                });
-            }
-        }
-        
-        function verificarAccesoTab(tabName) {
-            if (!usuarioLogueado) {
-                alert('🔐 Esta sección requiere acceso de administrador.\n\nHaz clic en "Acceso Admin" en la esquina superior derecha.');
-                mostrarLogin();
-                return;
-            }
-            switchTab(tabName);
-        }
-        
-        // ============================================
-        // BASE DE DATOS EN MEMORIA
-        // ============================================
-        
-        let database = {
-            registros: JSON.parse(localStorage.getItem('censoRegistros')) || [],
-            estadisticas: JSON.parse(localStorage.getItem('censoEstadisticas')) || {
-                total: 0, hoy: 0, mujeres: 0, informales: 0,
-                porComuna: {}, porGenero: { masculino: 0, femenino: 0, otro: 0 }
-            }
-        };
-        
-        // ============================================
-        // DATOS DE COMUNAS Y BARRIOS
-        // ============================================
-        
+        // ===== DATOS DE COMUNAS Y BARRIOS =====
         const comunasUnificadas = {
-            "Centro": "Centro",
-            "Calambeo": "Calambeo", 
-            "San Simón": "San Simón",
-            "Piedra Pintada": "Piedra Pintada",
-            "Jordán": "Jordán",
-            "Vergel": "Vergel",
-            "Salado": "Salado",
-            "Simón Bolívar": "Simón Bolívar",
-            "Picaleña Mirolindo": "Picaleña Mirolindo",
-            "Estadio": "Estadio",
-            "Ferias": "Ferias",
-            "Las Brisas": "Las Brisas",
-            "Boquerón": "Boquerón"
+            "Centro": "Centro", "Calambeo": "Calambeo", "San Simón": "San Simón",
+            "Piedra Pintada": "Piedra Pintada", "Jordán": "Jordán", "Vergel": "Vergel",
+            "Salado": "Salado", "Simón Bolívar": "Simón Bolívar", "Picaleña Mirolindo": "Picaleña Mirolindo",
+            "Estadio": "Estadio", "Ferias": "Ferias", "Las Brisas": "Las Brisas", "Boquerón": "Boquerón"
         };
         
         const barriosPorComuna = {
@@ -962,7 +741,7 @@
             "Jordán": ["4 Etapa del Jordán", "6 Etapa del Jordán", "7 Etapa del Jordán", "8 Etapa del Jordán", "9 Etapa del Jordán", "Andalicia", "Arboleda margaritas", "Arkacentro", "Arkamonica", "Arrayanes", "Calatayud", "Conj Res La Alemania", "Cordobita", "El Edén", "La campiña", "La Ladera", "Las Margaritas", "Las orquídeas", "Macadamia", "Multifamiliares el Jordán", "Multifamiliares Las Margaritas", "Prados del Norte", "Rincón de la Campiña", "San jacinto", "Torre Ladera", "Urb Aymara I", "Urb Aymara II", "Rincon de las Margaritas", "Urb Los Ocobos", "Urb Milenio I y II", "Urb Yacaira", "Urb Parrales"],
             "Vergel": ["Agua viva", "Altos de san francisco", "Balcones del vergel", "Bosques del vergel", "Brisas de Pedregal", "Cañaveral I", "Cañaveral II", "Camino de juan pablo II", "camino de san Francisco", "Camino del Vergel", "Condómino Ronda del Vergel", "Condómino tierra alta", "Conjunto cerrado Ambala", "Conjunto cerrado los Balsos", "El Mirador", "El Triunfo", "Estancia del vergel", "Fuente de Los Rosales", "Fuente de Los Rosales II", "La balsa", "La Esperanza", "La Gaviota", "Las Delicias", "Loa Alpes", "Loa Ángeles", "Los ciruelos", "Los Mandarinos", "Monte Madero", "Monte verde del Vergel", "Palma del Vergel", "Paseo de san Francisco", "Plazas del Bosque", "Portal del Vergel", "Primavera de Entre Rio", "Reservas del Pedregal", "Rincón de San Francisco", "Rincón del Pedregal I", "Rincón del Pedregal II", "Rincón del Vergel", "San Antonio", "Tierra linda del Vergel", "Torre fuente de los Rosales", "Torres de la Calleja", "Urb Arkala I", "Urb Arkambuco I", "Colinas del Norte", "Urb Pedregal", "Urb Villa Patricia", "Urb Altos de Ambala", "Urb Altos del pedregal", "Urb Ambala", "Urb Antares I", "Urb Antares II", "Urb Arkala II", "Urb Chicala", "Urb Entre Ríos I", "Urb Entre Ríos II", "Urb Fuente de los Rosales I", "Urb Girasol", "Urb Ibagué 2000", "Urb Los Cambulos", "Urb Los Gualandayes", "Urb Villa Vanesa", "Villa Gloria"],
             "Salado": ["Alamos", "chico", "El Salado", "Hacienda el Recreo", "Los Musicos", "Mirador de Cantabria", "Modelia I", "Modelia II", "Nueva Bilbao", "Pedro Ignacio VillaMarin", "Rosales de Tailandia", "Santa Ana", "Sector los Alpes", "Timaka", "Urb Santa Coloma", "Urb Alameda", "Urb Carlos LLeras C", "Urb Ambikaima", "Urb Cantabria", "Urb Comfatolima", "Urb Diana Milaidy", "Urb El Dorado", "Urb El Limón", "Urb El Palmar", "Fuente del Salado", "Urb Fuente santa", "Urb La Cabaña", "Urb La Candelar", "Urb La Floresta", "Urb La victoria", "Urb Lady Diana", "Urb Los Lagos", "Urb Monte Carlos", "Urb Oviedo", "Urb Pacandé", "Urb Palma del Rio", "Urb Palo Grande", "Urb Portales del Norte", "Urb Praderas del Norte", "Urb Reservas de Cantabria", "Urb San Luis", "Urb San Luis Gonzaga", "Urb San Luis II", "Urb San Pablo", "Urb San Sebastián", "Urb Santa catalina I", "Urb Santa Mónica", "Urb Shaddai", "Urb Territorio de Paz", "Urb Villa Brasilia", "Urb Villa clara II", "Urb Villa Julieta", "Protecho", "Urb Quinta Avenida", "Urb Tolima Grande", "Urb Vasconia", "Urb Vasconia Reservado", "Urb Villa del Norte", "Urb Villa del Palmar", "Urb Villa del Sol", "Urb Villa esperanza", "Urb Villa Jardín", "Urb Villa la paz", "Urb Villa Magdalena", "Urb Villa Marcela", "Urb Villa Vicentina", "Cristales", "Yerbabuena"],
-            "Simón Bolívar": ["Atolsure", "Caminos del Bosque", "Ciudadela Simón Bolívar I", "Ciudadela Simón Bolívar II", "Ciudadela Simón Bolívar III", "Conj Recid San Joaquín", "El Bunde I ,II y III", "Urb El bunde IV", "German Huertas", "Jardín I", "Jardín III", "Jardín parte baja", "Jardín Santander I, II y III", "Jardín Valparaíso", "La Cima I", "La Cima II", "Musicaria", "palermo", "portal del Jardín", "Reservas del Jardín", "Roberto Augusto Calderón", "San Gelato", "Topacio", "Tulio Varón", "Unidad Resid Carabineros", "Urb 2 de Julio", "Urb Agua Marina", "Urb Altos de Vasconia", "Urb Antonio María", "Urb Brisas de Vasconia", "Urb Buenaventura García", "Urb Ciudad Blanca", "Urb El Palmar I", "Urb El Palmar II", "Urb El Prado I", "Urb El Prado II", "Urb Jardín Antolsure", "Urb Jardín Avenida V", "Urb Jardín Chipalo I", "Urb Jardín Chipalo II", "Urb Jardín II", "Urb Jardín Porvenir", "Urb Jardín VI", "Urb Jardines del Campo", "Urb La Esmeralda", "Urb Las Acacias", "Urb Los Comuneros", "Urb Los Laureles", "Urb Los Pinos", "Urb Nueva Castilla", "Urb Nueva Colombia", "Urb Nuevo Armero", "Urb Nuevo Combeima", "Urb Nuevo Combeima II", "Urb Portal de Arkalá", "Versalles"],
+            "Simón Bolívar": ["Atolsure", "Caminos del Bosque", "Ciudadela Simón Bolívar I", "Ciudadela Simón Bolívar II", "Ciudadela Simón Bolívar III", "Conj Recid San Joaquín", "El Bunde I ,II y III", "Urb El bunde IV", "German Huertas", "Jardín I", "Jardín III", "Jardín parte baja", "Jardín Santander I, II y III", "Jardín Valparaíso", "La Cima I", "La Cima II", "Musicaria", "palermo", "portal del Jardín", "Reservas del Jardín", "Roberto Augusto Calderón", "San Gelato", "Topacio", "Tulio Varón", "Unidad Resid Carabineros", "Urb 2 de Julio", "Urb Agua Marina", "Urb Altos de Vasconia", "Urb Brisas de Vasconia", "Urb Buenaventura García", "Urb Ciudad Blanca", "Urb El Palmar I", "Urb El Palmar II", "Urb El Prado I", "Urb El Prado II", "Urb Jardín Antolsure", "Urb Jardín Avenida V", "Urb Jardín Chipalo I", "Urb Jardín Chipalo II", "Urb Jardín II", "Urb Jardín Porvenir", "Urb Jardín VI", "Urb Jardines del Campo", "Urb La Esmeralda", "Urb Las Acacias", "Urb Los Comuneros", "Urb Los Laureles", "Urb Los Pinos", "Urb Nueva Castilla", "Urb Nueva Colombia", "Urb Nuevo Armero", "Urb Nuevo Combeima", "Urb Nuevo Combeima II", "Urb Portal de Arkalá", "Versalles"],
             "Picaleña Mirolindo": ["Etapa II del Jordán", "Alfonso Uribe Badillo", "Altamira", "Aparco", "arboleda", "Arkaniza I", "Arkaniza II", "Arkaparaíso", "Bello Horizonte", "Bosque de la Alameda", "Carrenales", "Cond Las Palmeras", "Conj Resid Valparaíso", "El Tunal", "hacienda piedra pintada", "Jordán 3 Etapa", "Jordán 1 Etapa", "La Floresta", "Los Tunjos", "Picaleñita", "Picaleña", "portal de los Tunjos", "Reservas del Campestre", "San Francisco", "san remo", "Urb Bosque de Varsovia", "Urb Chaquen", "Urb Ciudad Luz", "Urb Comfenalco", "Urb Coopdiasam", "Urb Cutucumay", "Urb El poblado", "Urb Las Américas", "Urb Las flores", "Urb Los Remansos", "Urb Miraflores", "Urb nuevo horizonte", "Urb portal campestre", "Urb Praderas de santa Rita", "Urb Tahití", "Urb Varsovia", "Urb Villa Arkadia", "Urb Villa café", "Urb Villa de la Candelaria", "Urb Villa luz", "Urb Villa Yuli", "Valparaíso I", "Valparaíso II", "Valparaíso III", "Valparaíso IV", "Villa Carvajalita", "Villa del Pilar", "Villa María", "Villa Natalia"],
             "Estadio": ["Arkalena", "Bosques de santa Helena", "Boyacá", "Cádiz", "Casa Club", "Castellana", "Claret", "Departamental", "Federico Lleras", "Hipódromo", "La Francia", "Las palmas", "Laureles", "Macarena parte Alta", "Macarena", "Macarena parte Baja", "Magisterio", "Metaima parte Alta", "Metaima parte Baja", "monte alegre", "Nacional", "Naciones Unidas", "San Cayetano", "Santa Helena", "Santander"],
             "Ferias": ["12 de Octubre", "Alto de la Cruz", "América", "Arado", "Bosque Parte Alta", "Bosque parte baja", "refugio I", "refugio II", "Garzón", "Independiente", "La Isla", "La Martinica", "Las Brisas", "Las Ferias", "Libertad", "Los Mártires", "Peñón", "Popular", "Rodríguez Andrade", "san Vicente de Paúl", "Uribe Uribe", "Villa del río", "Villa María"],
@@ -970,10 +749,20 @@
             "Boquerón": ["Albania", "Boquerón", "Cerro Granate", "Colinas I", "Colinas II", "Darío Echandía", "Granada", "Isla", "Jazmín", "La Unión", "Miramar", "San Isidro", "terrazas de Boquerón", "Villa Mery"]
         };
         
-        const listaComunas = Object.keys(comunasUnificadas);
+        // ===== BASE DE DATOS EN MEMORIA =====
+        let database = {
+            registros: JSON.parse(localStorage.getItem('censoRegistros')) || [],
+            estadisticas: JSON.parse(localStorage.getItem('censoEstadisticas')) || {
+                total: 0, hoy: 0, mujeres: 0, informales: 0,
+                porComuna: {}, porGenero: { masculino: 0, femenino: 0, otro: 0 }
+            }
+        };
+        
+        let consecutivo = JSON.parse(localStorage.getItem('censoConsecutivo')) || 1;
+        let currentModule = 1;
         
         // ============================================
-        // FUNCIONES DEL SISTEMA
+        // FUNCIONES PRINCIPALES
         // ============================================
         
         function normalizarNombreComuna(nombre) {
@@ -999,6 +788,106 @@
             return nombreLimpio;
         }
         
+        // ===== FUNCIONES DE LOGIN =====
+        function verificarSesion() {
+            const usuarioGuardado = localStorage.getItem('censoUsuario');
+            const loginTime = localStorage.getItem('censoLoginTime');
+            
+            if (usuarioGuardado && loginTime) {
+                const tiempoTranscurrido = Date.now() - parseInt(loginTime);
+                
+                if (tiempoTranscurrido < SESION_DURACION) {
+                    usuarioLogueado = usuarioGuardado;
+                    actualizarInterfazLogin();
+                } else {
+                    localStorage.removeItem('censoUsuario');
+                    localStorage.removeItem('censoLoginTime');
+                    usuarioLogueado = null;
+                }
+            }
+        }
+        
+        function mostrarLogin() {
+            document.getElementById('loginModal').style.display = 'flex';
+            document.getElementById('inputUsuario').focus();
+        }
+        
+        function cerrarLogin() {
+            document.getElementById('loginModal').style.display = 'none';
+            document.getElementById('loginError').style.display = 'none';
+            document.getElementById('inputUsuario').value = '';
+            document.getElementById('inputClave').value = '';
+        }
+        
+        function intentarLogin() {
+            const usuario = document.getElementById('inputUsuario').value.trim();
+            const clave = document.getElementById('inputClave').value.trim();
+            const errorDiv = document.getElementById('loginError');
+            
+            const usuarioValido = USUARIOS_AUTORIZADOS.find(u => 
+                u.usuario === usuario && u.clave === clave
+            );
+            
+            if (usuarioValido) {
+                usuarioLogueado = usuario;
+                localStorage.setItem('censoUsuario', usuario);
+                localStorage.setItem('censoLoginTime', Date.now());
+                
+                cerrarLogin();
+                actualizarInterfazLogin();
+                alert('✅ Acceso concedido como: ' + usuario);
+            } else {
+                errorDiv.style.display = 'block';
+                document.getElementById('inputClave').value = '';
+                document.getElementById('inputClave').focus();
+            }
+        }
+        
+        function cerrarSesion() {
+            if (confirm('¿Cerrar sesión de administrador?')) {
+                usuarioLogueado = null;
+                localStorage.removeItem('censoUsuario');
+                localStorage.removeItem('censoLoginTime');
+                actualizarInterfazLogin();
+                switchTab('censo');
+                alert('Sesión cerrada.');
+            }
+        }
+        
+        function actualizarInterfazLogin() {
+            const loginBtn = document.querySelector('.login-btn');
+            
+            if (usuarioLogueado) {
+                loginBtn.innerHTML = `👤 ${usuarioLogueado} (Cerrar sesión)`;
+                loginBtn.onclick = cerrarSesion;
+                loginBtn.style.background = 'linear-gradient(135deg, #0052B1 0%, #0066CC 100%)';
+                
+                document.querySelectorAll('.tab').forEach(tab => {
+                    tab.style.display = 'flex';
+                });
+            } else {
+                loginBtn.innerHTML = '🔓 Acceso Admin';
+                loginBtn.onclick = mostrarLogin;
+                loginBtn.style.background = 'linear-gradient(135deg, #28a745 0%, #20c997 100%)';
+                
+                document.querySelectorAll('.tab').forEach((tab, index) => {
+                    if (index > 0) {
+                        tab.style.display = 'none';
+                    }
+                });
+            }
+        }
+        
+        function verificarAccesoTab(tabName) {
+            if (!usuarioLogueado) {
+                alert('🔐 Esta sección requiere acceso de administrador.\n\nHaz clic en "Acceso Admin" en la esquina superior derecha.');
+                mostrarLogin();
+                return;
+            }
+            switchTab(tabName);
+        }
+        
+        // ===== FUNCIONES DE PESTAÑAS Y MÓDULOS =====
         function switchTab(tabName) {
             document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
             document.querySelectorAll('.tab').forEach(tabBtn => tabBtn.classList.remove('active'));
@@ -1013,7 +902,7 @@
         function inicializarComunasSelect() {
             const comunaSelect = document.getElementById('comuna');
             comunaSelect.innerHTML = '<option value="">Seleccione una comuna</option>';
-            listaComunas.forEach((comuna, index) => {
+            Object.keys(comunasUnificadas).forEach((comuna, index) => {
                 const option = document.createElement('option');
                 option.value = comunasUnificadas[comuna];
                 option.textContent = `${index + 1}. ${comunasUnificadas[comuna]}`;
@@ -1041,8 +930,6 @@
                 barrioSelect.innerHTML = '<option value="">Primero seleccione una comuna</option>';
             }
         }
-        
-        let currentModule = 1;
         
         function showModule(n) {
             currentModule = n;
@@ -1098,7 +985,7 @@
                     isValid = false;
                     errorMessage = 'Género es obligatorio';
                 }
-                if (document.getElementById('genero').value === 'femenino' && 
+                if (document.getElementById('genero').value === 'Femenino' && 
                     !document.getElementById('madreCabeza').value) {
                     isValid = false;
                     errorMessage = 'Para género femenino, debe indicar si es madre cabeza de hogar';
@@ -1126,82 +1013,147 @@
             showModule(n - 1);
         }
         
-        let consecutivo = JSON.parse(localStorage.getItem('censoConsecutivo')) || 1;
-        
-        function finalizarRegistro() {
+        // ===== FUNCIÓN PRINCIPAL - GUARDAR REGISTRO =====
+        async function finalizarRegistro() {
             if (!document.getElementById('acepto').checked) {
                 alert('Debe aceptar el tratamiento de datos para continuar.');
                 return;
             }
-            
+
             const comunaSelect = document.getElementById('comuna');
             const comunaNombre = comunaSelect.value;
-            
+
             let comunaNormalizada = comunaNombre;
             if (comunaNombre && !comunasUnificadas[comunaNombre]) {
                 comunaNormalizada = normalizarNombreComuna(comunaNombre);
             }
-            
+
             const registro = {
                 id: Date.now(),
                 codigoCenso: `CEN-${document.getElementById('cedula').value.substring(0,4)}-${String(consecutivo).padStart(4,'0')}`,
                 nombre: document.getElementById('nombre').value,
                 cedula: document.getElementById('cedula').value,
                 edad: document.getElementById('edad').value,
-                genero: document.getElementById('genero').options[document.getElementById('genero').selectedIndex].text,
-                madreCabeza: document.getElementById('genero').value === 'femenino' ? 
-                    document.getElementById('madreCabeza').options[document.getElementById('madreCabeza').selectedIndex].text : '',
+                genero: document.getElementById('genero').value,
+                madreCabeza: document.getElementById('genero').value === 'Femenino' ? 
+                    document.getElementById('madreCabeza').value : '',
                 telefono: document.getElementById('telefono').value,
-                direccion: document.getElementById('direccion').value || 'No especificada',
-                casaPropia: document.getElementById('casa').options[document.getElementById('casa').selectedIndex].text,
+                direccion: document.getElementById('direccion').value || '',
+                casaPropia: document.getElementById('casa').value,
                 tipoVivienda: document.getElementById('casa').value === 'no' ? 
-                    document.getElementById('tipoVivienda').options[document.getElementById('tipoVivienda').selectedIndex].text : '',
-                trabajo: document.getElementById('trabajo').options[document.getElementById('trabajo').selectedIndex].text,
+                    document.getElementById('tipoVivienda').value : '',
+                trabajo: document.getElementById('trabajo').value,
                 subcategoriaTrabajo: document.getElementById('trabajo').value === 'informal' ? 
-                    document.getElementById('subcategoriaTrabajo').options[document.getElementById('subcategoriaTrabajo').selectedIndex].text : '',
-                detalleTrabajo: document.getElementById('detalle').value || 'No especificado',
+                    document.getElementById('subcategoriaTrabajo').value : '',
+                detalleTrabajo: document.getElementById('detalle').value || '',
                 comuna: comunaNormalizada,
                 barrio: document.getElementById('barrio').value,
-                derechos: document.getElementById('derechos').options[document.getElementById('derechos').selectedIndex].text,
-                relacionInstitucion: document.getElementById('relacionInstitucion').options[document.getElementById('relacionInstitucion').selectedIndex].text,
-                fecha: new Date().toISOString(),
-                fechaFormateada: new Date().toLocaleDateString('es-CO', {
-                    year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit'
-                })
+                derechos: document.getElementById('derechos').value,
+                relacionInstitucion: document.getElementById('relacionInstitucion').value,
+                fecha: new Date().toISOString()
             };
-            
-            database.registros.push(registro);
-            consecutivo++;
-            
-            actualizarEstadisticas(registro);
-            guardarEnStorage();
-            
-            document.getElementById('codigoCenso').textContent = registro.codigoCenso;
-            document.getElementById('successMessage').style.display = 'block';
-            
-            setTimeout(() => {
-                document.getElementById('successMessage').style.display = 'none';
+
+            // Mostrar "guardando"
+            const boton = document.querySelector('#m5 button[onclick="finalizarRegistro()"]');
+            const textoOriginal = boton.textContent;
+            boton.textContent = "⏳ Enviando a Google Sheets...";
+            boton.disabled = true;
+
+            try {
+                // ENVIAR A GOOGLE SHEETS
+                const formData = new FormData();
                 
-                document.querySelectorAll('#censo-tab input, #censo-tab select').forEach(el => {
-                    if (el.type !== 'button' && el.id !== 'acepto') {
-                        el.value = '';
-                    }
+                // Agregar todos los campos al FormData (nombres deben coincidir con el robot)
+                formData.append('codigo', registro.codigoCenso);
+                formData.append('nombre', registro.nombre);
+                formData.append('cedula', registro.cedula);
+                formData.append('edad', registro.edad);
+                formData.append('genero', registro.genero);
+                formData.append('madreCabeza', registro.madreCabeza || '');
+                formData.append('telefono', registro.telefono);
+                formData.append('direccion', registro.direccion || '');
+                formData.append('casaPropia', registro.casaPropia);
+                formData.append('tipoVivienda', registro.tipoVivienda || '');
+                formData.append('trabajo', registro.trabajo);
+                formData.append('subcategoria', registro.subcategoriaTrabajo || '');
+                formData.append('detalle', registro.detalleTrabajo || '');
+                formData.append('comuna', registro.comuna);
+                formData.append('barrio', registro.barrio);
+                formData.append('derechos', registro.derechos || '');
+                formData.append('institucion', registro.relacionInstitucion || '');
+                
+                // Enviar al robot de Google Sheets
+                const respuesta = await fetch(URL_ROBOT, {
+                    method: 'POST',
+                    body: formData,
+                    mode: 'no-cors'
                 });
                 
-                document.getElementById('acepto').checked = false;
-                document.getElementById('barrio').innerHTML = '<option value="">Primero seleccione una comuna</option>';
-                document.getElementById('barrio').disabled = true;
+                console.log('✅ Datos enviados a Google Sheets:', registro.codigoCenso);
                 
-                document.getElementById('madreCabezaField').style.display = 'none';
-                document.getElementById('tipoViviendaField').style.display = 'none';
-                document.getElementById('subcategoriaTrabajoField').style.display = 'none';
+                // Guardar localmente también
+                database.registros.push(registro);
+                consecutivo++;
+                actualizarEstadisticas(registro);
+                guardarEnStorage();
+
+                // Mostrar éxito
+                document.getElementById('codigoCenso').textContent = registro.codigoCenso;
+                document.getElementById('successMessage').style.display = 'block';
+
+                // Resetear formulario después de 5 segundos
+                setTimeout(() => {
+                    document.getElementById('successMessage').style.display = 'none';
+                    resetearFormulario();
+                    showModule(1);
+                    
+                    if (document.getElementById('admin-tab').classList.contains('active')) {
+                        actualizarPanelAdmin();
+                    }
+                }, 5000);
+
+            } catch (error) {
+                console.error('❌ Error al enviar:', error);
                 
-                showModule(1);
+                // Mostrar mensaje específico
+                alert('⚠️ Hubo un problema al enviar los datos a Google Sheets. Se guardaron localmente. Error: ' + error.message);
                 
-                if (document.getElementById('admin-tab').classList.contains('active')) {
-                    actualizarPanelAdmin();
+                // Guardar localmente como respaldo
+                database.registros.push(registro);
+                consecutivo++;
+                actualizarEstadisticas(registro);
+                guardarEnStorage();
+                
+                // Mostrar éxito local
+                document.getElementById('codigoCenso').textContent = registro.codigoCenso;
+                document.getElementById('successMessage').style.display = 'block';
+                
+                setTimeout(() => {
+                    document.getElementById('successMessage').style.display = 'none';
+                    resetearFormulario();
+                    showModule(1);
+                }, 5000);
+            } finally {
+                boton.textContent = textoOriginal;
+                boton.disabled = false;
+            }
+        }
+
+        // 🔄 Función para resetear el formulario
+        function resetearFormulario() {
+            document.querySelectorAll('#censo-tab input, #censo-tab select').forEach(el => {
+                if (el.type !== 'button' && el.id !== 'acepto') {
+                    el.value = '';
                 }
-            }, 5000);
+            });
+            
+            document.getElementById('acepto').checked = false;
+            document.getElementById('barrio').innerHTML = '<option value="">Primero seleccione una comuna</option>';
+            document.getElementById('barrio').disabled = true;
+            
+            document.getElementById('madreCabezaField').style.display = 'none';
+            document.getElementById('tipoViviendaField').style.display = 'none';
+            document.getElementById('subcategoriaTrabajoField').style.display = 'none';
         }
         
         function actualizarEstadisticas(registro) {
@@ -1220,7 +1172,7 @@
                 database.estadisticas.porGenero.otro++;
             }
             
-            if (registro.trabajo === 'Informal') {
+            if (registro.trabajo === 'informal') {
                 database.estadisticas.informales++;
             }
             
@@ -1239,6 +1191,7 @@
             localStorage.setItem('censoConsecutivo', consecutivo);
         }
         
+        // ===== FUNCIONES DEL MAPA =====
         function inicializarMapaCSS() {
             const contenedor = document.getElementById('mapa-css');
             contenedor.innerHTML = '';
@@ -1392,20 +1345,20 @@
             
             const hombres = registros.filter(r => r.genero === 'Masculino').length;
             const mujeres = registros.filter(r => r.genero === 'Femenino').length;
-            const informales = registros.filter(r => r.trabajo === 'Informal').length;
+            const informales = registros.filter(r => r.trabajo === 'informal').length;
             
             reporte += `👥 ESTADÍSTICAS DEMOGRÁFICAS:\n`;
             reporte += `• Hombres: ${hombres} (${((hombres/registros.length)*100).toFixed(1)}%)\n`;
             reporte += `• Mujeres: ${mujeres} (${((mujeres/registros.length)*100).toFixed(1)}%)\n`;
-            reporte += `• Madres cabeza de hogar: ${registros.filter(r => r.madreCabeza === 'Sí').length}\n\n`;
+            reporte += `• Madres cabeza de hogar: ${registros.filter(r => r.madreCabeza === 'si').length}\n\n`;
             
             reporte += `💼 ESTADÍSTICAS LABORALES:\n`;
             reporte += `• Trabajo informal: ${informales} (${((informales/registros.length)*100).toFixed(1)}%)\n`;
-            reporte += `• Trabajo formal: ${registros.filter(r => r.trabajo === 'Formal').length}\n`;
-            reporte += `• Desempleados: ${registros.filter(r => r.trabajo === 'Desempleado').length}\n\n`;
+            reporte += `• Trabajo formal: ${registros.filter(r => r.trabajo === 'formal').length}\n`;
+            reporte += `• Desempleados: ${registros.filter(r => r.trabajo === 'desempleado').length}\n\n`;
             
             reporte += `🏠 VIVIENDA:\n`;
-            reporte += `• Casa propia: ${registros.filter(r => r.casaPropia === 'Sí').length}\n`;
+            reporte += `• Casa propia: ${registros.filter(r => r.casaPropia === 'si').length}\n`;
             reporte += `• En arriendo: ${registros.filter(r => r.tipoVivienda === 'arriendo').length}\n`;
             
             alert(reporte);
@@ -1424,6 +1377,7 @@
             buscarRegistros();
         }
         
+        // ===== FUNCIONES DE ADMINISTRACIÓN =====
         function actualizarPanelAdmin() {
             document.getElementById('totalRegistros').textContent = database.estadisticas.total;
             document.getElementById('registrosHoy').textContent = database.estadisticas.hoy;
@@ -1544,7 +1498,7 @@
             detalles += `🏘️ Barrio: ${registro.barrio}\n`;
             detalles += `⚖️ Derechos vulnerados: ${registro.derechos}\n`;
             detalles += `🏛️ Relación con institución: ${registro.relacionInstitucion}\n`;
-            detalles += `📅 Fecha de registro: ${registro.fechaFormateada}\n\n`;
+            detalles += `📅 Fecha de registro: ${new Date(registro.fecha).toLocaleDateString('es-CO')}\n\n`;
             detalles += `══════════════════════════════════════\n`;
             detalles += `¿Qué desea hacer con este registro?\n`;
             
@@ -1596,7 +1550,7 @@
                     database.estadisticas.porGenero.otro++;
                 }
                 
-                if (registro.trabajo === 'Informal') {
+                if (registro.trabajo === 'informal') {
                     database.estadisticas.informales++;
                 }
                 
@@ -1666,7 +1620,7 @@
                     registro.barrio || "",
                     registro.derechos || "",
                     registro.relacionInstitucion || "",
-                    registro.fechaFormateada || ""
+                    new Date(registro.fecha).toLocaleDateString()
                 ];
                 
                 const escapedRow = row.map(cell => {
@@ -1765,7 +1719,7 @@
                     registro.barrio || "",
                     registro.derechos || "",
                     registro.relacionInstitucion || "",
-                    registro.fechaFormateada || ""
+                    new Date(registro.fecha).toLocaleDateString()
                 ];
                 
                 const escapedRow = row.map(cell => {
@@ -1796,10 +1750,7 @@
             alert(`✅ Se exportaron ${registrosAExportar.length} registros a Excel.\n\nEl archivo se descargará automáticamente.\n\n📌 IMPORTANTE: Al abrir en Excel, selecciona "Datos" → "Desde texto/CSV" y especifica el separador como "punto y coma (;)"`);
         }
         
-        // ============================================
-        // INICIALIZACIÓN DEL SISTEMA
-        // ============================================
-        
+        // ===== INICIALIZACIÓN DEL SISTEMA =====
         document.addEventListener('DOMContentLoaded', function() {
             // Verificar sesión
             verificarSesion();
@@ -1811,7 +1762,7 @@
             // Configurar eventos
             document.getElementById('genero').addEventListener('change', function() {
                 document.getElementById('madreCabezaField').style.display = 
-                    this.value === 'femenino' ? 'block' : 'none';
+                    this.value === 'Femenino' ? 'block' : 'none';
             });
             
             document.getElementById('casa').addEventListener('change', function() {
@@ -1836,46 +1787,9 @@
                 if (match) consecutivo = parseInt(match[1]) + 1;
             }
             
-            // Datos de prueba (solo primera vez)
-            if (database.registros.length === 0 && localStorage.getItem('datosPruebaCreados') !== 'true') {
-                console.log('🔧 Creando datos de prueba iniciales...');
-                
-                const fechaBase = new Date();
-                for (let i = 1; i <= 5; i++) {
-                    const registroPrueba = {
-                        id: Date.now() + i,
-                        codigoCenso: `CEN-TEST-${i.toString().padStart(4,'0')}`,
-                        nombre: `Persona Prueba ${i}`,
-                        cedula: `1000000${i}`,
-                        edad: 25 + i,
-                        genero: i % 2 === 0 ? 'Femenino' : 'Masculino',
-                        madreCabeza: i % 2 === 0 ? 'Sí' : '',
-                        telefono: `300123456${i}`,
-                        direccion: `Calle Prueba ${i}, Ciudad`,
-                        casaPropia: i % 3 === 0 ? 'Sí' : 'No',
-                        tipoVivienda: i % 3 === 0 ? '' : 'arriendo',
-                        trabajo: i % 2 === 0 ? 'Formal' : 'Informal',
-                        subcategoriaTrabajo: i % 2 === 0 ? '' : 'vendedor',
-                        detalleTrabajo: 'Ocupación de prueba para el sistema',
-                        comuna: 'Picaleña Mirolindo',
-                        barrio: barriosPorComuna['Picaleña Mirolindo'][i % barriosPorComuna['Picaleña Mirolindo'].length],
-                        derechos: 'ninguno',
-                        relacionInstitucion: 'ninguna',
-                        fecha: new Date(fechaBase.getTime() - i * 86400000).toISOString(),
-                        fechaFormateada: new Date(fechaBase.getTime() - i * 86400000).toLocaleDateString('es-CO')
-                    };
-                    
-                    database.registros.push(registroPrueba);
-                    actualizarEstadisticas(registroPrueba);
-                }
-                
-                localStorage.setItem('datosPruebaCreados', 'true');
-                guardarEnStorage();
-                console.log(`✅ 5 registros de prueba creados (solo una vez)`);
-            }
-            
             console.log('✅ Sistema de Censo Territorial inicializado.');
             console.log(`📊 Registros totales: ${database.registros.length}`);
+            console.log(`🌐 URL del robot configurada: ${URL_ROBOT}`);
             
             // Actualizar panel de administración
             actualizarPanelAdmin();
